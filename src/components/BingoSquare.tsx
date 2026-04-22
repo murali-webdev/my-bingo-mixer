@@ -8,15 +8,15 @@ interface BingoSquareProps {
 
 export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
   const baseClasses =
-    'relative flex items-center justify-center p-1 text-center border border-gray-300 rounded transition-all duration-150 select-none min-h-[60px] text-xs leading-tight';
+    'relative flex items-center justify-center p-2 text-center border border-gray-300 rounded transition-all duration-200 select-none min-h-[70px] text-xs leading-tight transform active:scale-95 hover:scale-105';
 
   const stateClasses = square.isMarked
     ? isWinning
-      ? 'bg-gray-300 border-gray-500 text-gray-900'
+      ? 'bg-gray-300 border-gray-500 text-gray-900 glow-winning'
       : 'bg-gray-200 border-gray-400 text-gray-800'
-    : 'bg-white text-gray-700 active:bg-gray-200';
+    : 'bg-white text-gray-700 active:bg-gray-200 hover:bg-gray-100';
 
-  const freeSpaceClasses = square.isFreeSpace ? 'font-bold text-sm' : '';
+  const freeSpaceClasses = square.isFreeSpace ? 'font-black text-sm' : '';
 
   return (
     <button
@@ -28,7 +28,7 @@ export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
     >
       <span className="wrap-break-word hyphens-auto">{square.text}</span>
       {square.isMarked && !square.isFreeSpace && (
-        <span className="absolute top-0.5 right-0.5 text-gray-600 text-xs">✓</span>
+        <span className="absolute top-1 right-1 text-gray-600 text-sm font-bold">✓</span>
       )}
     </button>
   );

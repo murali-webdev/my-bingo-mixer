@@ -6,6 +6,7 @@
   --color-marked: #F5F5F5; /* Light Gray */
   --color-marked-border: #9CA3AF; /* Medium Gray */
   --color-bingo: #374151; /* Dark Gray */
+  --color-accent-fun: #0d9488; /* Teal for fun mode */
 }
 
 html,
@@ -19,4 +20,44 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   -webkit-tap-highlight-color: transparent;
   letter-spacing: 0.025em; /* Subtle mono-inspired spacing */
+}
+
+/* Subtle dot pattern for backgrounds */
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Subtle grid pattern */
+.pattern-grid {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glow effect for winning squares */
+.glow-winning {
+  box-shadow: 0 0 10px rgba(55, 65, 81, 0.3);
+}
+
+/* Pulse animation */
+@keyframes pulse-mono {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.pulse-mono {
+  animation: pulse-mono 2s infinite;
+}
+
+/* Scale animation for buttons */
+@keyframes scale-tap {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.animate-tap {
+  animation: scale-tap 0.15s ease-out;
 }
