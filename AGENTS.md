@@ -48,3 +48,6 @@ See workshop guides in [workshop/](workshop/) for usage examples.
 ## File Instructions
 - **Frontend Design** ([frontend-design.instructions.md](.github/instructions/frontend-design.instructions.md)) - UI/UX guidelines
 - **Tailwind v4** ([tailwind-4.instructions.md](.github/instructions/tailwind-4.instructions.md)) - Tailwind CSS v4 features
+
+## Skills
+- **Dogfooding** ([dogfooding/SKILL.md](.github/skills/dogfooding/SKILL.md)) - Provides critical user experience feedback on web apps, focusing on fun and engagement
