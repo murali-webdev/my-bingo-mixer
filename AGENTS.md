@@ -51,3 +51,5 @@ See workshop guides in [workshop/](workshop/) for usage examples.
 
 ## Skills
 - **Dogfooding** ([dogfooding/SKILL.md](.github/skills/dogfooding/SKILL.md)) - Provides critical user experience feedback on web apps, focusing on fun and engagement
+
+- **Design Guide** ([design-guide.instructions.md](.github/instructions/design-guide.instructions.md)) - Guidelines for minimalist monochrome designs

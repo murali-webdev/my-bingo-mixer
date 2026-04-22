@@ -22,7 +22,7 @@ export function GameScreen({
       <header className="flex items-center justify-between p-3 bg-white border-b border-gray-200">
         <button
           onClick={onReset}
-          className="text-gray-500 text-sm px-3 py-1.5 rounded active:bg-gray-100"
+          className="text-gray-600 text-sm px-3 py-1.5 rounded active:bg-gray-200"
         >
           ← Back
         </button>
@@ -31,13 +31,13 @@ export function GameScreen({
       </header>
 
       {/* Instructions */}
-      <p className="text-center text-gray-500 text-sm py-2 px-4">
+      <p className="text-center text-gray-600 text-sm py-2 px-4">
         Tap a square when you find someone who matches it.
       </p>
 
       {/* Bingo indicator */}
       {hasBingo && (
-        <div className="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm">
+        <div className="bg-gray-200 text-gray-800 text-center py-2 font-semibold text-sm">
           🎉 BINGO! You got a line!
         </div>
       )}

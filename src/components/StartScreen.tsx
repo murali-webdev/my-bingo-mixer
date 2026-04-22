@@ -9,7 +9,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
         <h1 className="text-4xl font-bold text-gray-900 mb-2">Bingo Mixer</h1>
         <p className="text-lg text-gray-600 mb-8">Find your people!</p>
         
-        <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
+        <div className="bg-white rounded-lg p-6 border border-gray-300 mb-8">
           <h2 className="font-semibold text-gray-800 mb-3">How to play</h2>
           <ul className="text-left text-gray-600 text-sm space-y-2">
             <li>• Find people who match the questions</li>
@@ -20,7 +20,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
         <button
           onClick={onStart}
-          className="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors"
+          className="w-full bg-black text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-gray-800 transition-colors"
         >
           Start Game
         </button>
