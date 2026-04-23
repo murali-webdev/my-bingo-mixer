@@ -70,7 +70,7 @@ describe('bingoLogic', () => {
       });
 
       const board1 = generateBoard();
-      
+
       // Reset counter for second board
       callCount = 0;
       const board2 = generateBoard();
@@ -80,7 +80,7 @@ describe('bingoLogic', () => {
       // Boards should have different order (very unlikely to be the same with randomization)
       const texts1 = board1.filter((s) => !s.isFreeSpace).map((s) => s.text);
       const texts2 = board2.filter((s) => !s.isFreeSpace).map((s) => s.text);
-      
+
       // At least verify structure is correct
       expect(texts1).toHaveLength(24);
       expect(texts2).toHaveLength(24);
@@ -303,6 +303,18 @@ describe('bingoLogic', () => {
         board[i].isMarked = true;
       });
       expect(checkBingo(board)).toBeNull();
+    });
+
+    it('should detect four corners bingo', () => {
+      const board = generateBoard();
+      // Mark four corners (indices 0, 4, 20, 24)
+      [0, 4, 20, 24].forEach((i) => {
+        board[i].isMarked = true;
+      });
+      const result = checkBingo(board);
+      expect(result).not.toBeNull();
+      expect(result?.type).toBe('corners');
+      expect(result?.squares).toEqual([0, 4, 20, 24]);
     });
   });
 

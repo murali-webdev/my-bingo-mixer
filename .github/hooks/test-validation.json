@@ -1,0 +1,6 @@
+{
+  "when": "PreFinish",
+  "run": "npm run test",
+  "blockOnFailure": true,
+  "description": "Run tests before finishing any task to ensure code quality"
+}
