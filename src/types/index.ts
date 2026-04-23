@@ -13,4 +13,12 @@ export interface BingoLine {
   squares: number[];
 }
 
+export type GameMode = 'bingo' | 'card-deck';
+
 export type GameState = 'start' | 'playing' | 'bingo';
+
+export interface CardData {
+  id: string;
+  text: string;
+  isDrawn: boolean;
+}

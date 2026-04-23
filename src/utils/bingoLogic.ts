@@ -1,8 +1,8 @@
 import { questions, FREE_SPACE } from '../data/questions';
-import type { BingoSquareData, BingoLine } from '../types';
+import type { BingoSquareData, BingoLine, CardData } from '../types';
 
 // Re-export types for convenience
-export type { BingoSquareData, BingoLine } from '../types';
+export type { BingoSquareData, BingoLine, CardData } from '../types';
 
 const BOARD_SIZE = 5;
 const CENTER_INDEX = 12; // 5x5 grid, center is index 12 (row 2, col 2)
@@ -130,4 +130,40 @@ export function checkBingo(board: BingoSquareData[]): BingoLine | null {
 export function getWinningSquareIds(line: BingoLine | null): Set<number> {
   if (!line) return new Set();
   return new Set(line.squares);
+}
+
+/**
+ * Generate a shuffled deck of cards
+ */
+export function generateCardDeck(): CardData[] {
+  const shuffledQuestions = shuffleArray(questions);
+  return shuffledQuestions.map((question, index) => ({
+    id: `card-${index}`,
+    text: question,
+    isDrawn: false,
+  }));
+}
+
+/**
+ * Draw the next card from the deck
+ */
+export function drawNextCard(deck: CardData[]): CardData | null {
+  const availableCards = deck.filter(card => !card.isDrawn);
+  if (availableCards.length === 0) return null;
+
+  const randomIndex = Math.floor(Math.random() * availableCards.length);
+  const cardToDraw = availableCards[randomIndex];
+
+  // Mark the card as drawn
+  cardToDraw.isDrawn = true;
+
+  return cardToDraw;
+}
+
+/**
+ * Get the current drawn card
+ */
+export function getCurrentCard(deck: CardData[]): CardData | null {
+  const drawnCards = deck.filter(card => card.isDrawn);
+  return drawnCards[drawnCards.length - 1] || null;
 }
