@@ -44,8 +44,8 @@ jobs:
           # Copy workshop docs to deployment root
           # cp -r docs/* ./_site/
 
-          # Copy built app to /_site folder
-          cp -r dist ./_site/
+          # Copy built app to /game/ subfolder
+          cp -r dist ./_site/game/
 
           # Prevent Jekyll processing
           touch ./_site/.nojekyll
