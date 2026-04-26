@@ -42,10 +42,10 @@ jobs:
           mkdir -p ./_site
 
           # Copy workshop docs to deployment root
-          cp -r docs/* ./_site/
+          # cp -r docs/* ./_site/
 
-          # Copy built app to /game/ folder
-          cp -r dist ./_site/game/
+          # Copy built app to /_site folder
+          cp -r dist ./_site/
 
           # Prevent Jekyll processing
           touch ./_site/.nojekyll
